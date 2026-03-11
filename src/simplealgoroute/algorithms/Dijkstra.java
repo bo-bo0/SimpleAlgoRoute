@@ -3,7 +3,6 @@ package simplealgoroute.algorithms;
 import simplealgoroute.graphs.Label;
 import simplealgoroute.graphs.Node;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Comparator;
 
@@ -101,10 +100,8 @@ public abstract class Dijkstra
 
     private static Node chooseLabelledNodeWithMinCost(Node[] nodes)
     {
-        var list = Arrays.stream(nodes)
-                .filter(n -> n.getLabel() != null && !n.isChosen()).toList();
-
-        Node[] labelledNodes = new ArrayList<>(list).toArray(new Node[0]);
+        Node[] labelledNodes = Arrays.stream(nodes)
+                .filter(n -> n.getLabel() != null && !n.isChosen()).toArray(Node[]::new);
 
         Node minNode = Arrays.stream(labelledNodes)
                 .min(Comparator.comparing(n -> n.getLabel().cost()))
