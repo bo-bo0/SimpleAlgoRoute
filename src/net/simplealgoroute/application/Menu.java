@@ -37,7 +37,7 @@ public class Menu
 
         var sinkTreeMatrix = DijkstraAlgorithm.execute(matrix, root);
 
-        Thread.sleep(2000);
+        Thread.sleep(AppData.getLoadingTime());
 
         System.out.println(AppData.getBorder());
 
@@ -71,10 +71,11 @@ public class Menu
 
         System.out.println(AppData.getBorder());
     }
-    public void bellmanFordPerform(int[][] matrix)
+    public void bellmanFordPerform(int[][] matrix) throws InterruptedException
     {
         var nodes = BellmanFordAlgorithm.execute(matrix);
         System.out.println("Calculating routing tables using Bellman Ford algorithm...");
+        Thread.sleep(AppData.getLoadingTime());
 
         System.out.println(AppData.getBorder());
         System.out.println("Done! Routing tables:");
