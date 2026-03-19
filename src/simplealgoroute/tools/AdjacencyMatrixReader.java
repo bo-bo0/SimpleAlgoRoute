@@ -6,13 +6,12 @@ public class AdjacencyMatrixReader
 {
     public int[][] getMatrix()
     {
-        var scan = new Scanner(System.in);
         System.out.print("Insert the number of columns and rows[num]: ");
-        int size = scan.nextInt();
-        scan.nextLine();
+        int size = new SafeKeyboardScanner().nextInt();
 
         var matrix = new int[size][size];
 
+        var scan = new Scanner(System.in);
         for (int i = 0; i < size; i++)
         {
             System.out.print("Insert row " + (i + 1) + "[num1 num2...lastNum]: ");
