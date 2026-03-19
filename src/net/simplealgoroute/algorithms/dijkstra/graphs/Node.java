@@ -1,4 +1,4 @@
-package simplealgoroute.algorithms.dijkstra.graphs;
+package net.simplealgoroute.algorithms.dijkstra.graphs;
 
 public class Node
 {

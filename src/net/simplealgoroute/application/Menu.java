@@ -1,8 +1,9 @@
-package simplealgoroute.application;
+package net.simplealgoroute.application;
 
-import simplealgoroute.algorithms.Algorithm;
-import simplealgoroute.algorithms.dijkstra.DijkstraAlgorithm;
-import simplealgoroute.tools.SafeKeyboardScanner;
+import net.simplealgoroute.algorithms.Algorithm;
+import net.simplealgoroute.algorithms.bellmanford.BellmanFordAlgorithm;
+import net.simplealgoroute.algorithms.dijkstra.DijkstraAlgorithm;
+import net.simplealgoroute.tools.SafeKeyboardScanner;
 
 import java.util.Scanner;
 
@@ -72,7 +73,23 @@ public class Menu
     }
     public void bellmanFordPerform(int[][] matrix)
     {
+        var nodes = BellmanFordAlgorithm.execute(matrix);
+        System.out.println("Calculating routing tables using Bellman Ford algorithm...");
 
+        System.out.println(AppData.getBorder());
+        System.out.println("Done! Routing tables:");
+
+        for (var node : nodes)
+        {
+            System.out.println();
+            System.out.print("    ");
+            System.out.println(node.getName());
+            System.out.println("   ___");
+            node.getTable().printContent();
+            System.out.println();
+        }
+
+        System.out.println(AppData.getBorder());
     }
     public void exitPerform()
     {

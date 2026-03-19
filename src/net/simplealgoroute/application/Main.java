@@ -1,7 +1,7 @@
-package simplealgoroute.application;
+package net.simplealgoroute.application;
 
-import simplealgoroute.algorithms.Algorithm;
-import simplealgoroute.tools.AdjacencyMatrixReader;
+import net.simplealgoroute.algorithms.Algorithm;
+import net.simplealgoroute.tools.AdjacencyMatrixReader;
 
 public class Main
 {
