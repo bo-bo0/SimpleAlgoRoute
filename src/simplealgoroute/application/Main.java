@@ -1,9 +1,7 @@
 package simplealgoroute.application;
 
-import simplealgoroute.algorithms.Dijkstra;
+import simplealgoroute.algorithms.Algorithm;
 import simplealgoroute.tools.AdjacencyMatrixReader;
-
-import java.util.Scanner;
 
 public class Main
 {
@@ -14,49 +12,25 @@ public class Main
         System.out.println("Simple Algo Route v" + AppData.getVersion());
         System.out.println(AppData.getBorder());
 
-        var reader = new AdjacencyMatrixReader();
-        var matrix = reader.getMatrix();
+        var menu = new Menu();
+        Algorithm algorithm = menu.requestUserChoice();
 
-        System.out.println(AppData.getBorder());
+        var matrix = new int[0][];
 
-        System.out.print("Insert the name of the root[A-B...-Z]: ");
-        String root = new Scanner(System.in).nextLine();
-        System.out.println("Calculating sink tree using Dijkstra's algorithm...");
-
-        var sinkTreeMatrix = Dijkstra.execute(matrix, root);
-
-        Thread.sleep(2000);
-
-        System.out.println(AppData.getBorder());
-
-        System.out.println("Done! Here's the adjacency matrix of the sink tree:\n");
-
-        System.out.print("    ");
-
-        char name = 'A';
-        for (int i = 0; i < matrix.length; i++)
+        if (algorithm != null)
         {
-            System.out.print(name + " ");
-            name++;
+            var reader = new AdjacencyMatrixReader();
+            matrix = reader.getMatrix();
+
+            System.out.println(AppData.getBorder());
         }
 
-        System.out.println();
-
-        name = 'A';
-        for (var row : sinkTreeMatrix)
+        switch (algorithm)
         {
-            System.out.print(name);
-            System.out.print(" [ ");
-            name++;
+            case DIJKSTRA -> menu.dijkstraPerform(matrix);
+            case BELLMAN_FORD -> menu.bellmanFordPerform(matrix);
 
-            for (var col : row)
-            { System.out.print(col + " "); }
-
-            System.out.print("]");
-
-            System.out.println();
+            case null -> menu.exitPerform();
         }
-
-        System.out.println(AppData.getBorder());
     }
 }

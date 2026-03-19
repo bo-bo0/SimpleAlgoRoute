@@ -1,12 +1,12 @@
-package simplealgoroute.algorithms;
+package simplealgoroute.algorithms.dijkstra;
 
-import simplealgoroute.graphs.Label;
-import simplealgoroute.graphs.Node;
+import simplealgoroute.algorithms.dijkstra.graphs.Label;
+import simplealgoroute.algorithms.dijkstra.graphs.Node;
 
 import java.util.Arrays;
 import java.util.Comparator;
 
-public abstract class Dijkstra
+public abstract class DijkstraAlgorithm
 {
     public static int[][] execute(int[][] matrix, String rootName)
     {
