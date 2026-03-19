@@ -1,4 +1,4 @@
-package simplealgoroute.tools;
+package net.simplealgoroute.tools;
 
 import java.util.Scanner;
 

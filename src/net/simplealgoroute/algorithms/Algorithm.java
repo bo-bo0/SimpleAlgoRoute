@@ -1,4 +1,4 @@
-package simplealgoroute.algorithms;
+package net.simplealgoroute.algorithms;
 
 public enum Algorithm
 {

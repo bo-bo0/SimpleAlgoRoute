@@ -1,7 +1,7 @@
-package simplealgoroute.algorithms.dijkstra;
+package net.simplealgoroute.algorithms.dijkstra;
 
-import simplealgoroute.algorithms.dijkstra.graphs.Label;
-import simplealgoroute.algorithms.dijkstra.graphs.Node;
+import net.simplealgoroute.algorithms.dijkstra.graphs.Label;
+import net.simplealgoroute.algorithms.dijkstra.graphs.Node;
 
 import java.util.Arrays;
 import java.util.Comparator;
