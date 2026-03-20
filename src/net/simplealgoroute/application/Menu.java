@@ -96,7 +96,6 @@ public class Menu
     {
         System.out.println(AppData.getBorder());
         System.out.println("Program successfully terminated");
-        System.out.println(AppData.getBorder());
 
         System.exit(0);
     }
